@@ -22,7 +22,6 @@ local defaults = {
     -- same directory name)
     include_only_installed_plugins = false,
     
-    yank_register = "+",
     -- Key mappings bound inside the telescope window
     telescope_mappings = {
         -- ['<CR>'] = require('cheatsheet.telescope.actions').select_or_fill_commandline,
