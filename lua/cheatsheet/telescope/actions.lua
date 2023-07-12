@@ -54,9 +54,9 @@ function M.copy_cheat_value(prompt_bufnr)
     local selection = t_actions_state.get_selected_entry()
     local cheatcode = selection.value.cheatcode
     reg = config.yank_register 
-    -- vim.fn.setreg(reg, cheatcode)
+    vim.fn.setreg(reg, cheatcode)
     vim.api.nvim_echo(
-        { { "Yanked ", "" }, { cheatcode, "cheatCode" } },
+        { { string.format("Yanked to %s", reg), "" }, { cheatcode, "cheatCode" } },
             false, {}
     )
 end
