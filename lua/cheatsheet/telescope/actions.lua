@@ -55,7 +55,7 @@ function M.copy_cheat_value(prompt_bufnr)
     reg = "*"
     vim.fn.setreg(reg, cheatcode)
     vim.api.nvim_echo(
-        { { string.format("Yanked to %s", reg), "" }, { cheatcode, "cheatCode" } },
+        { { string.format("Yanked to %s: ", reg), "" }, { cheatcode, "cheatCode" } },
             false, {}
     )
 end
