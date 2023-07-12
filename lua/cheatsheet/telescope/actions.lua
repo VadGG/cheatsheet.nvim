@@ -1,7 +1,7 @@
 local t_actions = require('telescope.actions')
 local t_actions_state = require('telescope.actions.state')
 local utils = require('cheatsheet.utils')
-local config = require('cheatsheet.config')
+local config = require('telescope.config').values
 
 -- @param execute: Whether to execute a command or type it in
 local function select_current_item(prompt_bufnr, execute)
