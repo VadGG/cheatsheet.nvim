@@ -10,21 +10,24 @@ local defaults = {
     --     enabled = {},
     --     disabled = {},
     -- },
-    bundled_cheatsheets = true,
+    bundled_cheatsheets = false,
     -- For plugin specific cheatsheets
     -- bundled_plugin_cheatsheets = {
     --     enabled = {},
     --     disabled = {},
     -- }
-    bundled_plugin_cheatsheets = true,
+    bundled_plugin_cheatsheets = false,
     -- For bundled plugin cheatsheets, do not show a sheet if you
     -- don't have the plugin installed (searches runtimepath for
     -- same directory name)
-    include_only_installed_plugins = true,
+    include_only_installed_plugins = false,
+    
+    yank_register = "+"
     -- Key mappings bound inside the telescope window
     telescope_mappings = {
-        ['<CR>'] = require('cheatsheet.telescope.actions').select_or_fill_commandline,
-        ['<A-CR>'] = require('cheatsheet.telescope.actions').select_or_execute,
+        -- ['<CR>'] = require('cheatsheet.telescope.actions').select_or_fill_commandline,
+        -- ['<A-CR>'] = require('cheatsheet.telescope.actions').select_or_execute,
+        ['<CR>'] = require('cheatsheet.telescope.actions').copy_cheat_value,
         ['<C-Y>'] = require('cheatsheet.telescope.actions').copy_cheat_value,
         ['<C-E>'] = require('cheatsheet.telescope.actions').edit_user_cheatsheet,
     }

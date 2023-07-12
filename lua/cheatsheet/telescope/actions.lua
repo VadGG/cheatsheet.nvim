@@ -1,6 +1,7 @@
 local t_actions = require('telescope.actions')
 local t_actions_state = require('telescope.actions.state')
 local utils = require('cheatsheet.utils')
+local config = require('cheatsheet.config')
 
 -- @param execute: Whether to execute a command or type it in
 local function select_current_item(prompt_bufnr, execute)
@@ -52,7 +53,8 @@ function M.copy_cheat_value(prompt_bufnr)
     t_actions.close(prompt_bufnr)
     local selection = t_actions_state.get_selected_entry()
     local cheatcode = selection.value.cheatcode
-    vim.fn.setreg("0", cheatcode)
+    reg = config.yank_register 
+    vim.fn.setreg(reg, cheatcode)
     vim.api.nvim_echo(
         { { "Yanked ", "" }, { cheatcode, "cheatCode" } },
             false, {}
